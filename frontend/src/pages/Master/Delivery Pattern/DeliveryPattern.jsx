@@ -1,0 +1,396 @@
+import React, { useEffect, useState, useRef } from "react";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalFooter,
+  Row,
+  Col,
+  Card,
+  CardBody,
+  Table,
+  Label,
+  Input,
+  Form,
+  FormFeedback,
+  ModalBody,
+} from "reactstrap";
+import { TablePagination } from "@mui/material";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import LoaderPage from "components/Loader/LoaderPage";
+import GetAuthToken from "customhooks/TokenVerifivation/GetAuthToken";
+import {
+  API_DELIVERY_PATTERN_DELETE,
+  API_DELIVERY_PATTERN_GET_POST,
+} from "customhooks/All_Api/Apis";
+
+const DeliveryPttern = () => {
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [modal, setModal] = useState(false);
+  const [deliveryPatternData, setdeliveryPatternData] = useState([]);
+  const [deleteId, setDeleteId] = useState();
+  const [ConfirmDelete, setConfirmDelete] = useState(false);
+  const [deliveryPatternName, setDeliveryPatternName] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+  const DeleteConformFun = () => setConfirmDelete(!ConfirmDelete);
+
+  //  local storage token Start
+
+  const { config, first_name, last_name } = GetAuthToken();
+
+  //  local storage token End
+
+  // modal popup start
+  const toggle = () => setModal(!modal);
+  const externalCloseBtn = (
+    <button
+      type="button"
+      className="close"
+      style={{ position: "absolute", top: "15px", right: "15px" }}
+      onClick={toggle}
+    >
+      &times;
+    </button>
+  );
+  // modal popup End
+
+  const validation = useFormik({
+    initialValues: {
+      delivery_pattern: "",
+    },
+    validationSchema: yup.object({
+      delivery_pattern: yup.string().required("Delivery Patterns is required"),
+    }),
+    onSubmit: async (values) => {
+      console.log(values);
+      try {
+        console.log(values);
+        const { data } = await axios.post(
+          API_DELIVERY_PATTERN_GET_POST,
+          values,
+          config
+        );
+        deliveryPatternDetails();
+        toast.success(`Delivery Pattern added successfully`, {
+          position: "top-center",
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+        toggle();
+      } catch (error) {
+        console.log(error);
+        toast.error(`Delivery Pattern must be unique`, {
+          position: "top-center",
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+      }
+    },
+  });
+
+  // Delivery Pattern data GET Start
+  const deliveryPatternDetails = async () => {
+    try {
+      const response = await axios.get(API_DELIVERY_PATTERN_GET_POST, config);
+      setdeliveryPatternData(response.data?.data || []);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // Delivery Pattern data GET End
+
+  // delete Tax Rate  Start
+  const handleDelete = async (id) => {
+    try {
+      const URL = `${API_DELIVERY_PATTERN_DELETE}${id}/`;
+
+      await axios.delete(URL, config);
+
+      deliveryPatternDetails();
+      toast.success(`Delivery Pattern Deleted successfully`, {
+        position: "top-center",
+        autoClose: 5000,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+      DeleteConformFun();
+    } catch (error) {
+      console.error(error);
+      toast.error(` Something Went Wrong`, {
+        position: "top-center",
+        autoClose: 5000,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+    }
+  };
+
+  // delete Tax Rate End
+
+  const searchInputRef = useRef(null);
+
+  const handleSearch = () => {
+    const searchData = deliveryPatternData.filter((item) => {
+      const searchString = `${item.delivery_pattern} `; // Add more properties as needed
+      return searchString.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+    setFilteredData(searchData);
+  };
+
+  // Search Filter End
+
+  // Pagenation Start
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
+  // Pagenation End
+
+  useEffect(() => {
+    handleSearch();
+    deliveryPatternDetails();
+  }, []);
+  useEffect(() => {
+    handleSearch();
+  }, [searchQuery, deliveryPatternData]);
+
+  return (
+    <>
+      <Row>
+        <Col xl={12}>
+          <Card style={{ marginTop: "100px" }}>
+            <CardBody className="d-flex justify-content-between">
+              <h3>Delivery Patterns</h3>
+              {/* <Link to="/master-city"> */}
+              <Button color="primary" onClick={toggle}>
+                Create
+              </Button>
+              {/* </Link> */}
+            </CardBody>
+          </Card>
+        </Col>
+
+        {/*  */}
+
+        <div className="d-flex mb-3 justify-content-center">
+          <input
+            ref={searchInputRef}
+            className="rounded-4 w-25 border-0 shadow-sm  bg-body-tertiary rounded  "
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="   Search ..."
+          />
+          {searchQuery.length >= 1 ? (
+            <Button
+              className="btn btn-sm "
+              onClick={() => {
+                const input = searchInputRef.current;
+                if (input) {
+                  input.select();
+                  document.execCommand("cut");
+                }
+              }}
+            >
+              <i className="fas fa-times"></i>
+            </Button>
+          ) : (
+            <Button className=" btn btn-sm " onClick={handleSearch}>
+              <i className="fas fa-search"></i>
+            </Button>
+          )}
+        </div>
+
+        {/*  */}
+
+        {loading == true ? (
+          <LoaderPage />
+        ) : (
+          <Col xl={12}>
+            <Card className="pb-5">
+              <CardBody>
+                <div className="table-responsive">
+                  <Table className="table mb-0">
+                    <thead className="table-light">
+                      <tr>
+                        <th>Sr no.</th>
+                        <th>Delivery Patterns</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {(searchQuery
+                        ? filteredData
+                        : deliveryPatternData &&
+                          deliveryPatternData.slice(
+                            page * rowsPerPage,
+                            page * rowsPerPage + rowsPerPage
+                          )
+                      ).map((item, index) => (
+                        <tr key={item.id}>
+                          <th scope="row">{index + 1}</th>
+                          <td>{item.delivery_pattern}</td>
+                          <td>
+                            <Link
+                              to={`/master-delivery-pattern-edit/${item.id}`}
+                            >
+                              <Button
+                                className="btn btn-warning btn-sm"
+                                size="small"
+                              >
+                                <i className="fas fa-pencil-alt"></i>
+                              </Button>
+                            </Link>
+
+                            <Button
+                              className="btn btn-danger btn-sm ms-1"
+                              color="danger"
+                              // onClick={DeleteConformFun}
+                              onClick={() => {
+                                DeleteConformFun(
+                                  item.id && setDeleteId(item.id),
+                                  setDeliveryPatternName(item.delivery_pattern)
+                                );
+                                console.log(`popup pass id ${item.id}`);
+                              }}
+                            >
+                              <i className="fas fa-trash-alt"></i>
+                            </Button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </div>
+              </CardBody>
+              <TablePagination
+                className=" d-flex justfy-content-start"
+                rowsPerPageOptions={[5, 10, 25, 100]}
+                component="div"
+                count={deliveryPatternData.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
+            </Card>
+          </Col>
+        )}
+      </Row>
+
+      <div>
+        {/* Model WinDow Start */}
+        <Modal isOpen={modal} toggle={toggle} external={externalCloseBtn}>
+          <ModalHeader>Delivery Patterns </ModalHeader>
+
+          <Col xl="12">
+            <Card>
+              <CardBody>
+                <Form
+                  className="needs-validation"
+                  onSubmit={validation.handleSubmit}
+                >
+                  {/*  */}
+                  <Row className="">
+                    <Label for="exampleEmail" className="mt-3" sm={4}>
+                      Delivery Patterns
+                    </Label>
+                    <Col sm={8} className="mt-3 mb-3 ">
+                      <Input
+                        name="delivery_pattern"
+                        placeholder="Delivery Pattern"
+                        type="text"
+                        className="form-control "
+                        onChange={validation.handleChange}
+                        onBlur={validation.handleBlur}
+                        value={validation.values.delivery_pattern || ""}
+                        invalid={
+                          validation.touched.delivery_pattern &&
+                          validation.errors.delivery_pattern
+                            ? true
+                            : false
+                        }
+                      />
+                      {validation.touched.delivery_pattern &&
+                      validation.errors.delivery_pattern ? (
+                        <FormFeedback type="invalid">
+                          {validation.errors.delivery_pattern}
+                        </FormFeedback>
+                      ) : null}
+                    </Col>
+                  </Row>
+                  {/*  */}
+
+                  <ModalFooter>
+                    <Button color="primary" type="submit">
+                      Add Delivery Pattern
+                    </Button>
+                    <Button color="secondary" onClick={toggle}>
+                      Cancel
+                    </Button>
+                  </ModalFooter>
+                </Form>
+              </CardBody>
+            </Card>
+          </Col>
+        </Modal>
+        {/* Model WinDow End */}
+      </div>
+
+      {/* Delete Popup Start */}
+      <div>
+        <Modal isOpen={ConfirmDelete} toggle={DeleteConformFun}>
+          <ModalHeader toggle={DeleteConformFun}>
+            <h4 className="ms-5 text-danger">Alert</h4>
+          </ModalHeader>
+          <ModalBody>
+            <p className=" text-center">
+              Are you Sure to delete
+              <h5 className="text-danger fs-5 mx-1">{deliveryPatternName}</h5>
+              Delivery Pattern ?
+            </p>
+          </ModalBody>
+          <ModalFooter>
+            <Button
+              color="primary"
+              // onClick={DeleteConformFun}
+              onClick={(e) => handleDelete(deleteId)}
+              deleteId
+            >
+              Delete
+            </Button>
+            <Button color="secondary" onClick={DeleteConformFun}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </Modal>
+      </div>
+      {/* Delete Popup End */}
+    </>
+  );
+};
+
+export default DeliveryPttern;

@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+.signup-banner-container {
+    background-color: #2A70B8;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.signup-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign-up-button {
+    background-color: transparent;
+    padding: 10px 30px 10px 30px;
+    color: white;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: white;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .signup-banner-container {
+        height: 30vh;
+        background-size: cover;
+        background-color: #2A70B8;
+        
+    }
+
+    .signup-banner-content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sign-up-button {
+        background-color: transparent;
+        padding: 10px;
+        color: white;
+        border-style: dashed;
+        border-width: 2px;
+        border-color: white;
+        font-size: 15px;
+    }
+}

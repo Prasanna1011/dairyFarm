@@ -1,0 +1,9 @@
+.signup-card {
+    width: 35vw;
+}
+
+@media screen and (max-width : 767px) {
+    .signup-card {
+        width: 100vw;
+    }
+}

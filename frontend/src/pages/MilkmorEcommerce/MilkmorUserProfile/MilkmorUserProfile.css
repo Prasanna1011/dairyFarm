@@ -1,0 +1,161 @@
+.profile-banner-container {
+    width: 100%;
+    background-image: url("../../../assets//images/brands/cartbanner.jpg");
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-content-container {
+    background-color: #F6F5F1;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profile-content-layout {
+    display: flex;
+    flex-direction: row;
+    background-size: cover;
+}
+
+.left-component {
+    width: 25%;
+    background-color: #FFFFFF;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.right-component {
+    width: 75%;
+    background-color: #FFFFFF;
+    margin-left: 10px;
+    padding: 20px;
+}
+
+.horizontal-rule {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.input-fields-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.family-fields-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.input-fields {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.field {
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    background-color: #DCDADA;
+    border: none;
+}
+
+.family-input-fields {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.family-field {
+    height: 40px;
+    padding: 10px;
+    background-color: #DCDADA;
+    border: none;
+}
+
+.save-button {
+    background-color: #3B66A0;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.input-fields-number {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.input-fields-button {
+    width: 10%;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+.send-otp-button {
+    background-color: #3B66A0;
+    margin-top: 7px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    color: #FFFFFF;
+}
+
+
+@media screen and (max-width: 767px) {
+    .profile-content-layout {
+        flex-direction: column;
+        background-size: cover;
+    }
+
+    .left-component {
+        width: 100%;
+        margin-right: 0px;
+        
+    }
+
+    .right-component {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .input-fields-container {
+        flex-direction: column;
+    }
+
+    .input-fields {
+        width: 100%;       
+    }
+
+    .family-input-fields {
+        width: 100%;
+    }
+
+    .input-fields-number  {
+        width: 100%;
+    }
+
+    .family-fields-container {
+        flex-direction: column;
+        width: 100%;
+    }
+}

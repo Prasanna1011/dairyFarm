@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0; 
+  background-color: rgba(43, 112, 183, 0.5);
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 4;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-item {
+  margin-right: 35px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  font-size: 13px;
+  padding-left: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-now-button {
+  background-color: #FDED00;
+  border-color: #4D859A;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 20px;
+  color: #2B70B7;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -7px;
+}
+
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 200px;
+  background-color: #2B70B7;
+  background-size: cover;
+  list-style: none;
+  z-index: 2;
+  margin-top: -10px;
+}
+
+.menu-item:hover .submenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #2B70B7;
+  padding-left: 0px;
+  margin-left: 0px;
+  border: none;
+  
+}
+
+.submenu-item {
+  align-self: flex-start;
+  margin: 0px;
+  text-decoration: none;
+  color: #fff;
+  background: #2B70B7;
+  padding-left: 0px;
+  margin-left: 0px;
+  border: none;
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #5475A4;
+    position: absolute;
+    top: 60px;
+    left: -250px; 
+    width: 55%;
+    min-height: 100vh;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: left 1s ease; 
+  }
+
+  .menu.active {
+    left: 0; 
+  }
+
+  .menu-button {
+    display: block;
+  }
+}

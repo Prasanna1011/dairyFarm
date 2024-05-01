@@ -1,0 +1,80 @@
+.subscription-items-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.delivery-frequency-and-duration {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.deliver-frequency-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.choose-subscription-duration-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.headings-subscription-cart {
+    font-weight: 700;
+    color: #2C2C2C;
+}
+
+.radio-buttons-container {
+    /* margin-top: 2px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.pattern-totals-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.subscription-totals-container {
+    width: 40%;
+    background-color: #fff;
+    border: 2px solid #EBEBEB;
+    margin-bottom: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 767px) {
+    .delivery-frequency-and-duration {
+        flex-direction: column;
+    }
+
+    .headings-subscription-cart {
+        font-weight: 500;
+        color: #2C2C2C;
+        font-size: 20px;
+    }
+
+    .pattern-totals-container {
+        display: flex;
+        flex-direction: column;      
+    }
+
+    .subscription-totals-container {
+        width: 100%;
+    }
+}

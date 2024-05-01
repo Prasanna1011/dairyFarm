@@ -1,0 +1,205 @@
+{
+  "city": [
+    {
+      "city": "gandhinagar",
+      "active": false,
+      "id": 9
+    },
+    {
+      "city": "AHMDABAD",
+      "active": false,
+      "id": 12
+    },
+    {
+      "city": "odisha",
+      "active": false,
+      "id": 13
+    },
+    {
+      "city": "ssaassaass",
+      "active": false,
+      "id": 16
+    },
+    {
+      "city": "ssaassaass",
+      "active": false,
+      "id": 17
+    },
+    {
+      "city": "gandhinagar",
+      "active": false,
+      "id": 18
+    },
+    {
+      "city": "gandhinagar",
+      "active": "false",
+      "id": 19
+    },
+    {
+      "city": "gandhinagar",
+      "active": false,
+      "id": 20
+    },
+    {
+      "city": "gudgao",
+      "active": false,
+      "id": 21
+    },
+    {
+      "city": "rajasthan",
+      "active": false,
+      "id": 22
+    },
+    {
+      "city": "gandhinagar",
+      "active": false,
+      "id": 23
+    },
+    {
+      "city": "gandhinagar",
+      "active": false,
+      "id": 24
+    },
+    {
+      "city": "gandhinagar",
+      "active": false,
+      "id": 25
+    },
+    {
+      "city": "gandhinagar",
+      "active": false,
+      "id": 26
+    }
+  ],
+  "pincode": [
+    {
+      "pinCodeCity": "sambhajinagar",
+      "pincode": "431136",
+      "id": 1
+    },
+    {
+      "pinCodeCity": "sambhajinagar",
+      "pincode": "431136",
+      "id": 2
+    },
+    {
+      "pinCodeCity": "sambhajinagar",
+      "pincode": "431136",
+      "id": 3
+    },
+    {
+      "pinCodeCity": "sambhajinagar",
+      "pincode": "431136",
+      "id": 4
+    },
+    {
+      "pinCodeCity": "sambhajinagar",
+      "pincode": "431136",
+      "id": 5
+    },
+    {
+      "pinCodeCity": "sambhajinagar",
+      "pincode": "222",
+      "id": 6
+    },
+    {
+      "pinCodeCity": "AHMDABAD",
+      "pincode": "222333",
+      "id": 7
+    },
+    {
+      "pinCodeCity": "gandhinagar",
+      "pincode": "232323",
+      "id": 8
+    },
+    {
+      "pinCodeCity": "gandhinagar",
+      "pincode": "232323",
+      "id": 9
+    },
+    {
+      "pinCodeCity": "gandhinagar",
+      "pincode": "232323",
+      "id": 10
+    },
+    {
+      "pinCodeCity": "gandhinagar",
+      "pincode": "232323",
+      "id": 11
+    },
+    {
+      "pinCodeCity": "puneE",
+      "pincode": "21212",
+      "id": 12
+    },
+    {
+      "pinCodeCity": "gandhinagar",
+      "pincode": "23222",
+      "id": 15
+    },
+    {
+      "pinCodeCity": "gandhinagar",
+      "pincode": "23222",
+      "id": 16
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 17
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 18
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 19
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 20
+    }
+  ],
+  "register": [
+    {
+      "email": "bufi@mailinator.com",
+      "username": "pipubyhi",
+      "password": "Pa$$w0rd!",
+      "id": 1
+    },
+    {
+      "email": "prasanna@techastha.com",
+      "username": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "email": "admin@themesbrand.com",
+      "password": "123456",
+      "id": 7
+    }
+  ]
+}

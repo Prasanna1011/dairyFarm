@@ -1,0 +1,13 @@
+.amount-input-field {
+    border: solid 1px #EBEBEB;
+    width: 100%;
+    padding: 8px;
+    background-color: #EBEBEB;
+}
+
+.recharge-button {
+    background-color: #3B66A0;
+    border: none;
+    padding: 8px 10px 8px 10px;
+    color: white;
+}

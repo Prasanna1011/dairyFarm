@@ -1,0 +1,55 @@
+.horizontal-rule {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.comment-field {
+    height: 40px;
+}
+
+.tickets-save-button {
+    background-color: #3B66A0;
+    color: white;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 20px;
+    border: none;
+}
+
+.tickets-cancel-button {
+    background-color: #E91E63;
+    color: white;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 20px;
+    border: none;
+}
+
+.previous-tickets-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tickets-dark-styles{
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+}
+
+.tickets-text-styles{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.tickets-info-container{
+    width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+    .tickets-info-container{
+        width: 100%;
+    }
+}

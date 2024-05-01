@@ -1,0 +1,47 @@
+.downlod-items-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+}
+
+.downloads-logo-image {
+    width: 120px;
+    height: 120px;
+}
+
+.download-items {
+    min-height: 200px;
+    height: auto;
+    width: 45%;
+    padding: 20px;
+    border: 2px solid #E2E2E2;
+    cursor: pointer;
+    transition: transform 0.1s linear, box-shadow 0.1s linear;
+}
+
+.download-items:hover {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.download-button {
+    padding: 8px;
+    background-color: #2A70B8;
+    color: #FFFFFF;
+    border: none;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .downlod-items-container {
+        flex-direction: column;
+    }
+
+    .download-items {
+        width: 100%;
+    }
+}

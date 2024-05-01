@@ -1,0 +1,55 @@
+body {
+    background-color: #FFFFFF;
+}
+
+.our-farm-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: auto;
+    background-size: cover;
+}
+
+.read-more-button{
+    background-color: #2A70B8;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.enquire-now-section {
+    background-color: #2A70B8;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 0px;
+    margin-top: -5px;
+}
+
+.enquire-now-alignment{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-now-button {
+    background-color: #FDED00;
+    border: 3px solid #2a70b8;
+    
+}
+
+@media screen and (max-width: 767px) {
+    .enquire-now-alignment{ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .enquire-now-section {
+        height: auto;
+    }
+}

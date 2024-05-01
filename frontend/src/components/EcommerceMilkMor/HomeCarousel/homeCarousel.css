@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.carousel-image {
+    height: 85vh;
+    width: 100%;
+  }
+
+.carousel-container {
+  position: relative;
+  top: 0;
+}

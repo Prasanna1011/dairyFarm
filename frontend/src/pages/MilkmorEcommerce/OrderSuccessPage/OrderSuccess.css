@@ -1,0 +1,31 @@
+.order-success-page-bg {
+    background-color: #2A70B8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-success-heading{
+ color: white;
+}
+
+.success-page-buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-page-buttons {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    border: solid 2px white;
+}

@@ -1,0 +1,53 @@
+body {
+    background-color: #FFFFFF;
+}
+
+.banner {
+    height: 50vh;
+    width: 100vw;
+}
+
+.sign-up-banner-container {
+    background-color: #2A70B8;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    top: 0;
+}
+
+.sign-up-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign-up-button {
+    background-color: transparent;
+    padding: 10px 30px 10px 30px;
+    color: white;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: white;
+    font-size: 25px;
+}
+
+.paragraph{
+    font-size: 16px;
+}
+
+.list-container {
+    height: auto;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list-item {
+    width: 22vw;
+    font-size: 16px;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,51 @@
+.profile-banner-container {
+    width: 100%;
+    background-image: url("../../../assets//images/brands/cartbanner.jpg");
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-content-container {
+    background-color: #F6F5F1;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.wallet-amounts-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wallet-transaction-history-button {
+    background-color: #3B66A0;
+    color: white;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
+}
+
+.transaction-id-hover {
+    color: #000000;
+    cursor: pointer;
+}
+
+.transaction-id-hover:hover {
+    color: #3B66A0;
+    text-decoration: underline;
+}
+
+@media screen and (max-width : 767px) {
+    .wallet-amounts-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}

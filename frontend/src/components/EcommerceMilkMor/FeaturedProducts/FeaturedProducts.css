@@ -1,0 +1,37 @@
+.featured-products-container {
+    background-color: #FFFFFF;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 95% !important; 
+    border: solid;
+    border-color: #E2E2E2;
+    border-width: 2px;
+    border-radius: 10px;
+    min-height: 350px;
+    background-size: cover;
+    padding: 15px;
+    cursor: pointer;
+    width: 60%;
+    transition: transform 0.1s linear, box-shadow 0.1s linear;
+}
+
+.featured-card:hover {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.featured-product-image {
+    height: 130px;
+    width: 130px;
+}

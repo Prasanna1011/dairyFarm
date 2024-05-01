@@ -1,0 +1,30 @@
+body {
+    background-color: #FFFFFF;
+}
+
+.white-background{
+    background-color: #FFFFFF;
+}
+
+.line-width {
+    width: 40%;
+}
+
+.line-product-home-img {
+    width: 20%;
+}
+
+.who-are-we-container {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .who-are-we-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+}
